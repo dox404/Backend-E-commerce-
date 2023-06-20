@@ -1,7 +1,8 @@
 const express=require('express')
 require('./Db/index')
+require('dotenv').config()
 
-const userRouter=require('../router/userRouter')
+const ProductRouter=require('../router/ProductRouter')
 const app=express()
 
 app.use(express.urlencoded({ extended: false }))
@@ -10,9 +11,9 @@ app.use(express.json())
 
 
 //router
-app.use('/',userRouter)
+app.use('/api/v1',ProductRouter)
 
 
-app.listen(5050,()=>{
-    console.log("server is started at 5050")
+app.listen(process.env.PORT,()=>{
+    console.log(`server is started at port ${process.env.PORT}`)
 })

@@ -1,7 +1,15 @@
 const Product = require('../models/ProductSchema')
+const ErrorHandler=require('../utils/errorHandler')
 
 async function GetAllProduct(req, res) {
     const Products=await Product.find()
+    res.status(200).json({success:true,Products})
+}
+async function GetProductDetails(req, res) {
+    const Products=await Product.findById(req.params.id)
+    if(!Product){
+        return next(new ErrorHandler("Product Not Found",404) )
+    }
     res.status(200).json({success:true,Products})
 }
 async function CreateProduct(req,res){
@@ -43,6 +51,7 @@ module.exports = {
     GetAllProduct,
     CreateProduct,
     UpdateProducts,
-    DeleteProducts
+    DeleteProducts,
+    GetProductDetails
     
 }

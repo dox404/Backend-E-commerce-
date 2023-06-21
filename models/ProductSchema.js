@@ -16,11 +16,11 @@ const productSchema=new mongoose.Schema({
         maxlength:[8,"Price Cannot exceed 8 Character"]
     },
     image:{
-        url:{
+        
             type:String,
             require:true,
 
-        }
+        
     }
    
 })

@@ -13,9 +13,12 @@ async function GetProductDetails(req, res) {
     res.status(200).json({success:true,Products})
 }
 async function CreateProduct(req,res){
-   const product= await Product.create(req.body)
-   product.save()
-   res.status(200).json({Success:true,product})
+    // console.log(req.body.img)
+//    const product= await Product.create(req.body)
+   console.log(req.body)
+//    product.save()
+//    res.status(200).json({Success:true,product})
+res.send("success")
 }
 
 async function UpdateProducts(req,res){

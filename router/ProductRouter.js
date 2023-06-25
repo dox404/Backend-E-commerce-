@@ -1,6 +1,10 @@
 const express=require('express')
 const {GetAllProduct,CreateProduct,UpdateProducts,DeleteProducts,GetProductDetails}=require('../controller/ProductController')
 const router=express.Router()
+// const multer=require('multer')
+// const upload = multer({ dest: 'uploads/' })
+const upload=require('../AWS/upload')
+
 
 
 // user Routes
@@ -9,7 +13,7 @@ router.get('/products/:id',GetProductDetails)
 
 
 //admin routes
-router.post('/products/new',CreateProduct)
+router.post('/products/new',upload.single("image"),CreateProduct)
 
 router.put('/products/:id',UpdateProducts)
 router.delete('/products/:id',DeleteProducts)

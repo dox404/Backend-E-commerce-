@@ -14,11 +14,16 @@ async function GetProductDetails(req, res) {
 }
 async function CreateProduct(req, res) {
     console.log(req.body,req.file)
-    // const product = await Product.create(req.body)
+    console.log(req.body.name)
+    console.log(req.body.description)
+    console.log(req.body.price)
+    console.log(req.file.location)
+    const data={name:req.body.name,description:req.body.description,price:req.body.price,image:req.file.location}
+    const product = await Product.create(data)
     //    console.log(req.body)
-    // product.save()
-    // res.status(200).json({ Success: true, product })
-    res.send("success")
+    product.save()
+    res.status(200).json({ Success: true, product })
+    // res.send("success")
 }
 
 async function UpdateProducts(req, res) {

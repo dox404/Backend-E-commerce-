@@ -20,13 +20,13 @@ const userSchema=new mongoose.Schema({
         // required:[true,"Plese Enter The full Address"],
         // maxlength:[8,"Price Cannot exceed 8 Character"]
     },
-    // image:{
+    image:{
         
-    //         type:String,
-    //         require:true,
+            type:String,
+            require:true,
 
         
-    // }
+    }
    
 })
 module.exports=new mongoose.model("User",userSchema)

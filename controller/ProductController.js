@@ -1,6 +1,6 @@
 const Product = require('../models/ProductSchema')
 const ErrorHandler = require('../utils/errorHandler')
-const upload=require('../AWS/upload')
+const upload=require('../AWS/ProductImgUpload')
 
 
 async function GetAllProduct(req, res) {

@@ -3,7 +3,8 @@ const {GetAllProduct,CreateProduct,UpdateProducts,DeleteProducts,GetProductDetai
 const router=express.Router()
 // const multer=require('multer')
 // const upload = multer({ dest: 'uploads/' })
-const upload=require('../AWS/upload')
+const upload=require('../AWS/ProductImgUpload')
+
 
 
 

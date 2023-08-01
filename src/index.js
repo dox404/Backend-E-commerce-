@@ -3,6 +3,7 @@ require('./Db/index')
 require('dotenv').config()
 
 const ProductRouter=require('../router/ProductRouter')
+const UserRouter=require('../router/UserRouter')
 const errorMiddleware=require('../middleware/error')
 const cors = require('cors')
 const app=express()
@@ -21,6 +22,7 @@ app.use(cors())
 
 //router
 app.use('/api/v1',ProductRouter)
+app.use('/user',UserRouter)
 
 
 app.listen(process.env.PORT,()=>{

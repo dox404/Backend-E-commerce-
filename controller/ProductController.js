@@ -1,8 +1,17 @@
 const Product = require('../models/ProductSchema')
 const ErrorHandler = require('../utils/errorHandler')
 const upload=require('../AWS/upload')
+
+
 async function GetAllProduct(req, res) {
+    // const page = req.query.page || 1
+    // const keyword = req.query.keyword || null
+
+    // const skip = page - 1 * 5
+    
     const Products = await Product.find()
+
+    // { skip: 10, limit: 5 }
     res.status(200).json({ success: true, Products })
 }
 async function GetProductDetails(req, res) {

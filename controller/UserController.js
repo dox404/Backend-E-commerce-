@@ -9,7 +9,17 @@ console.log(req.file)
     res.status(200).json({ Success: true })
 
 }
+
+async function LoginUser(req,res){
+    console.log(req.body)
+    const email=req.body.email
+    const password=req.body.password
+    const user = await User.findOne({ email: email })
+    console.log(user)
+    res.send(user)
+}
 module.exports = {
-    createUser
+    createUser,
+    LoginUser
 
 }
